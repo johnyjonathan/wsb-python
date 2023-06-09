@@ -1,0 +1,5 @@
+{
+    "title": "Algorytm DFS (Depth First Search)",
+    "data": "# Algorytm DFS depth first search\ngraf = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\n\ndef dfs(graf, wierzcholek, odwiedzone):\n    odwiedzone.add(wierzcholek)\n    print(wierzcholek, end=' ')\n\n    for sasiad in graf[wierzcholek]:\n        if sasiad not in odwiedzone:\n            dfs(graf, sasiad, odwiedzone)\n\nodwiedzone = set()\ndfs(graf, 'A', odwiedzone)"
+}
+  
