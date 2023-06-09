@@ -1,0 +1,7 @@
+{
+    "title": "Singleton",
+    "description": "Singleton to wzorzec projektowy z kategorii kreacyjnych, który gwarantuje, że dana klasa ma tylko jedną instancję i dostarcza globalny punkt dostępu do tej instancji. Jest powszechnie używany w sytuacjach, w których musimy kontrolować, jak i kiedy dana klasa jest dostępna. Na przykład, możemy używać wzorca Singleton, gdy potrzebujemy dokładnie jednego obiektu do koordynacji działań w systemie, takiego jak kontroler drukarki lub manager połączeń do bazy danych.",
+    "explanation": "W tym kodzie, metoda specjalna __new__ jest przeciążona. Ta metoda jest odpowiedzialna za tworzenie nowych obiektów, więc jest to idealne miejsce do zaimplementowania logiki Singletona. Jeżeli cls._instance nie jest jeszcze zdefiniowane, tworzona jest nowa instancja klasy za pomocą metody super().__new__(cls). Ta nowa instancja jest następnie przypisywana do cls._instance, zapewniając, że przy kolejnych próbach stworzenia obiektu, zamiast tworzyć nową instancję, zwrócona zostanie już istniejąca.",
+    "data": "class Singleton:\n    _instance = None\n\n    def __new__(cls, *args, **kwargs):\n        if not cls._instance:\n            cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)\n        return cls._instance\n\nsingleton1 = Singleton()\nsingleton2 = Singleton()\n\nprint(singleton1 is singleton2)  # Zwróci True, ponieważ obie zmienne wskazują na tę samą instancję"
+  }
+  

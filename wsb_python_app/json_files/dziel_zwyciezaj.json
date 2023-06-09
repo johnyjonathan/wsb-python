@@ -1,0 +1,5 @@
+{
+    "title": "Sortowanie przez scalanie - Merge Sort",
+    "data": "# sortowanie przez scalanie - merge sort\n\ndef merge_sort(lista):\n    if len(lista) <= 1:\n        return lista\n\n    srodek = len(lista) // 2\n    lewa = merge_sort(lista[:srodek])\n    prawa = merge_sort(lista[srodek:])\n\n    return merge(lewa, prawa)\n\ndef merge(lewa, prawa):\n    wynik = []\n    i = j = 0\n\n    while i < len(lewa) and j < len(prawa):\n        if lewa[i] < prawa[j]:\n            wynik.append(lewa[i])\n            i += 1\n        else:\n            wynik.append(prawa[j])\n            j += 1\n\n    wynik.extend(lewa[i:])\n    wynik.extend(prawa[j:])\n\n    return wynik\n\n\nlista = [5, 1, 9, 3, 7, 6, 8, 2, 4]\nprint(\"Przed sortowaniem:\", lista)\nprint(\"Po sortowaniu:\", merge_sort(lista))"
+  }
+  

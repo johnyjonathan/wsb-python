@@ -1,0 +1,5 @@
+{
+    "title": "odwrócenie bitów",
+    "data": "class Stos:\n    def __init__(self):\n        self.elements =[]\n\n    def dodaj(self, element):\n        self.elements.append(element)\n\n    def pobierz_el(self):\n        return self.elements.pop()\n\n    def jest_pusty(self):\n        return False if self.elements else True\n\n\ndef odwroc_bity(bit_string):\n    stos = Stos()\n    for element in bit_string:\n        stos.dodaj(element)\n\n    odwrocone = \"\"\n    while True:\n        odwrocone += stos.pobierz_el()\n        if stos.jest_pusty():\n            break\n\n    return odwrocone\n\n\n# Test \nprint(odwroc_bity(\"1010111\"))"
+  }
+  

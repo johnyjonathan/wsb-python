@@ -1,0 +1,5 @@
+{
+    "title": "silnia metodą rekurencji",
+    "data": "def silnia_req(n): # requrencja ogonowa??\n    return 1 if n <= 1 else n * silnia_req(n-1)\n\nprint(silnia_req(3))"
+}
+  

@@ -1,0 +1,5 @@
+{
+    "title": "Zliczanie liter w stringu",
+    "data": "# Zlicznie liter w stringu\n\ndef count_letters(string_: str) -> dict:\n    \n    letters = tuple([x.lower() for x in string_ if x.isalpha()])\n    return {letter: letters.count(letter) for letter in set(letters)}\n    \n    \n\nprint(count_letters('jestem 9  Michał'))"
+  }
+  

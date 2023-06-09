@@ -1,0 +1,5 @@
+{
+    "title": "Tickets Queue",
+    "data": "import queue\n\nclass Tickets:\n    def __init__(self) -> None:\n        self.tasks = queue.Queue()\n\n    def createTicket(self,title, msg) -> None:\n        self.tasks.put((title, msg))\n    \n    def compliteTicket(self) -> None:\n        print(\"Ticket completed:\", self.tasks.get())\n    \n    def showTicketsQueue(self):\n        print(\"Tickets queue:\")\n        temp_queue = queue.Queue()\n        while not self.tasks.empty():\n            zadanie = self.tasks.get()\n            print(zadanie)\n            temp_queue.put(zadanie)\n\n        while not temp_queue.empty():\n            self.tasks.put(temp_queue.get())\n\n\ntickets = Tickets()\n\ntickets.createTicket(\"Bug\", \"Bug in internal app X\")\ntickets.createTicket(\"printer\", \"Printer doesn't work\")\n\ntickets.showTicketsQueue()\n\ntickets.compliteTicket()\n\ntickets.showTicketsQueue()"
+  }
+  

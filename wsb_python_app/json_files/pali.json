@@ -1,0 +1,5 @@
+{
+    "title": "Czy jest palindromem?",
+    "data": "# Czy jest palindromem?\n\ndef czy_palindrom(string_: str) -> bool:\n    chars = [el.lower() for el in string_ if el.isalpha()]\n    return chars == chars[::-1]\n\nstring_ = \"sedes\"\n\npalindrom = czy_palindrom(string_=string_)\n\nprint(f\"{string_} -> {palindrom}\")"
+  }
+  
